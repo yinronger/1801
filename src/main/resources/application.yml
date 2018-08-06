@@ -1,0 +1,45 @@
+server:
+  port: 8082
+  tomcat:
+    uri-encoding: UTF-8
+  servlet:
+    context-path: /springboot-jpa-hibernate
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/springboot?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: root
+
+  redis:
+      host: localhost
+      port: 6379
+      password:
+
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+  jpa:
+    database: MYSQL
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+
+  thymeleaf:
+     cache: false
+     enabled: false
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: 1801a
+
+mybatis:
+  mapperLocations: mapper/*.xml
+  type-aliases-package: com.jk.model
